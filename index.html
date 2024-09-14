@@ -10,13 +10,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Meteo App</title>
   </head>
   <body>
     <div class="weather-app">
-      <header class="search-form" id="search-form">
-        <form>
+      <header>
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
@@ -32,35 +32,32 @@
           <div>
             <h1 class="weather-app-city" id="city"></h1>
             <p class="weather-app-details">
-              <span id="time"></span>,<span id="description"></span>
+              <span id="time"></span>,
+              <span id="description"></span>
               <br />
               Humidity: <strong id="humidity"></strong>, Wind:
               <strong id="wind-speed"></strong>
             </p>
           </div>
           <div class="weather-app-temperature-container">
-            <div class="weather-app-icon">🌤️</div>
+            <div id="icon"></div>
             <div class="weather-app-temperature" id="temperature"></div>
-            <div class="weather-app-unit">°F</div>
+            <div class="weatehr-app-unit">°C</div>
           </div>
         </div>
       </main>
+
       <footer>
-        Coded by
-        <a href="https://github.com/samanthahonaker" target="_blank">
-          Samantha Honaker
-        </a>
-        open-sourced on
-        <a
-          href="https://github.com/samanthahonaker/weather-app"
-          target="_blank"
+        This project was coded by
+        <a href="https://github.com/matthieua/" target="_blank"> Matt Delac</a>,
+        is
+        <a href="https://github.com/matthieua/meteo" target="_blank"
+          >open-sourced on GitHub</a
         >
-          GitHub
-        </a>
-        and website hosted on
-        <a href="https://sams-weatherapp.netlify.app/" target="_blank">
-          Netlify
-        </a>
+        and
+        <a href="https://meteo-shecodes-app.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >
       </footer>
     </div>
     <script src="src/index.js"></script>

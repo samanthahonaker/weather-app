@@ -7,13 +7,15 @@ function refreshWeather(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.city;
-  timeElement.innerHTML = formateDate(date);
+  timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = "${response.data.temperature.humidity}%";
   windSpeedElement.innerHTML = "${response.data.wind.speed}mp/h";
   temperatureElement.innerHTML = Math.round(temperature);
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
 function formateDate(date) {
@@ -40,7 +42,7 @@ function formateDate(date) {
 function searchCity(city) {
   let apiKey = "74a4601a40a52b7c18ctbo4c71f3445e";
   let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial";
+    "https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}";
   axios.get(apiUrl).then(refreshWeather);
 }
 
