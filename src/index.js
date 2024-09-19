@@ -13,12 +13,12 @@ function refreshWeather(response) {
   timeElement.innerHTML = formatDate(date);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = "${response.data.temperature.humidity}%";
-  windSpeedElement.innerHTML = "${response.data.wind.speed}mp/h";
+  windSpeedElement.innerHTML = "${response.data.wind.speed}km/h";
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
-function formateDate(date) {
+function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
   let days = [
